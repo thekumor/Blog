@@ -22,20 +22,8 @@ function SetTitle(title)
 
 function SetAuthor(author, color = "#ffdd55")
 {
-	var element = "";
-
-	if (!justify)
-		justify = JUSTIFY_DEFAULT;
-
-	var style = "";
-
-	if (color)
-		style = "style=\"color: " + color + "\"";
-
-	element = "<p id=\" + author + "\" class=\"" + justify + "\" " + style + ">" + content + "</p>";
-
 	postElements.push(element);
-	return element;
+	return Text(author, color);
 }
 
 function SetTime(time)
