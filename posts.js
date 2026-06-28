@@ -79,11 +79,33 @@ function List(...args)
 
 function PutOnScreen(postName)
 {
-	var parent = document.getElementById("main-container");
+	var parentOfParent = document.getElementById("main-container");
+
+	if (!metaInfo["Time"])
+	{
+		metaInfo["Time"] = "2026-06-28 0:00";
+	}
 
 	var postParent = document.createElement("div");
 	postParent.className = "post-container";
-	parent.appendChild(postParent);
+	postParent.id = metaInfo["Time"];
+
+	var thisDate = Date.parse(metaInfo["Time"]);
+
+	for (div in document.getElementsByClassName("post-container"))
+	{
+		const divTime = Date.parse(div.id);
+
+		// This div is older than currently created div.
+		if (divTime > thisDate)
+		{
+			parentOfParent.appendChild(postParent);
+		}
+		else
+		{
+			parentOfParent.insertBefore(postParent, div);
+		}
+	}
 
 	if (!metaInfo["Title"])
 	{
