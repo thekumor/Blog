@@ -32,6 +32,8 @@
 		?>
 	</h3>
 
+	<div class="container" id="main-container"></div>
+
 	<footer>
 		<p>Blog - The Kumor 2026</p>
 	</footer>

@@ -39,7 +39,7 @@ function List(...args)
 
 function PutOnScreen()
 {
-	var parent = document.body;
+	var parent = document.getElementById("main-container");
 
 	postElements.forEach(element => {
 		var container = document.createElement("div");
