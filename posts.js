@@ -46,7 +46,7 @@ function PutOnScreen()
 		container.className = "post-element-container";
 		container.innerHTML = element;
 
-		parent.appendChild(name);
+		parent.appendChild(container);
 	});
 
 	// Clears the elements for new post.
@@ -55,9 +55,20 @@ function PutOnScreen()
 
 function OnLoad()
 {
-	Image("https://thekumor.com/img/kumor_logo.svg");
-	Text("This is some test image.");
+	fetch("posts.php")
+		.then(res => res.json())
+		.then(files => {
+			for (const file of files) {
+				const script = document.createElement("script");
+				script.src = file;
 
-	List("First element in list", "Second element", "Final element.");
-	Text("Colored text :)", "#ffaa00");
+				script.onload = () => {
+					console.log("Loaded post script: " + script.src);	
+				};
+
+				document.head.appendChild(script);
+				
+				PutOnScreen();
+			}
+		});
 }
