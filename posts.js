@@ -83,7 +83,7 @@ function PutOnScreen(postName)
 
 	if (!metaInfo["Time"])
 	{
-		metaInfo["Time"] = "2026-06-25 0:00";
+		metaInfo["Time"] = "2026-06-30 0:00";
 	}
 
 	var postParent = document.createElement("div");
