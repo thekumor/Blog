@@ -100,7 +100,7 @@ function PutOnScreen(postName)
     {
         const divTime = Date.parse(div.id);
 
-        if (divTime > thisDate)
+        if (divTime < thisDate)
         {
             parent.insertBefore(postParent, div);
             inserted = true;
