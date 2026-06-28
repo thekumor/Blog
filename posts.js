@@ -79,7 +79,7 @@ function List(...args)
 
 function PutOnScreen(postName)
 {
-	var parentOfParent = document.getElementById("main-container");
+	var parent  = document.getElementById("main-container");
 
 	if (!metaInfo["Time"])
 	{
