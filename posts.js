@@ -8,6 +8,14 @@
 
 var postElements = [];
 
+function Heading(text)
+{
+	var element = "<h2>" + text + "</h2>"
+
+	postElements.push(element);
+	return element;
+}
+
 function Image(src)
 {
 	var element = "<img src=\"" + src + "\">";
@@ -37,9 +45,14 @@ function List(...args)
 	listElements += "</ul>";
 }
 
-function PutOnScreen()
+function PutOnScreen(postName)
 {
 	var parent = document.getElementById("main-container");
+
+	var title = document.createElement("h2");
+	title.textContent = postName;
+	
+	parent.appendChild(title);
 
 	postElements.forEach(element => {
 		var container = document.createElement("div");
@@ -62,9 +75,11 @@ function OnLoad()
 				const script = document.createElement("script");
 				script.src = file;
 
+				const name = file.split("/").pop().replace(".js", "");
+
 				script.onload = () => {
-					console.log("Loaded post script: " + script.src);	
-					PutOnScreen();
+					console.log("Loaded post script: " + script.src);
+					PutOnScreen(name);
 				};
 
 				document.head.appendChild(script);
