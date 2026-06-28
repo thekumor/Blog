@@ -92,31 +92,24 @@ function PutOnScreen(postName)
 
 	var thisDate = Date.parse(metaInfo["Time"]);
 
-	var containers = document.getElementsByClassName("post-container");
+	const containers = Array.from(document.getElementsByClassName("post-container"));
 
-	if (containers.length > 1)
-	{
-		var divTimes = {};
-		for (var div of containers)
-		{
-			if (div == postParent)
-				continue;
+    let inserted = false;
 
-			const divTime = Date.parse(div.id);
-			divTimes[div.id] = divTime;
-		}
-		const sorted = Object.entries(divTimes)
-			.sort(([, dateA], [, dateB]) => dateA - dateB);
+    for (const div of containers)
+    {
+        const divTime = Date.parse(div.id);
 
-		const min = Object.entries(divTimes)
-			.reduce((min, cur) => {
-				return cur[1] < min[1] ? cur : min;
-			});
+        if (divTime > thisDate)
+        {
+            parent.insertBefore(postParent, div);
+            inserted = true;
+            break;
+        }
+    }
 
-		parentOfParent.insertBefore(postParent, getElementById(min[0]));
-	}
-	else
-		parentOfParent.appendChild(postParent);
+    if (!inserted)
+        parent.appendChild(postParent);
 
 	if (!metaInfo["Title"])
 	{
