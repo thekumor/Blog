@@ -40,8 +40,8 @@ img {
 }
 
 ul {
-    list-style-position: inside;
-    text-align: center;
+    display: inline-block;
+    text-align: left;
 }
 
 footer {
