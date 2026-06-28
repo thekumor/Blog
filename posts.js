@@ -76,9 +76,9 @@ function PutOnScreen(postName)
 	{
 		var title = document.createElement("h2");
 		title.textContent = postName;
+
+		parent.appendChild(title);
 	}
-	
-	parent.appendChild(title);
 
 	postElements.forEach(element => {
 		var container = document.createElement("div");
