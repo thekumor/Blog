@@ -22,7 +22,7 @@ function SetTitle(title)
 
 function SetAuthor(author, color = "#ffdd55")
 {
-	return Text(author, color);
+	return Text(author, color, JUSTIFY_LEFT);
 }
 
 function SetTime(time)
