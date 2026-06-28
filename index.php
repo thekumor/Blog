@@ -6,6 +6,10 @@
 --
 -- ================================================================ -->
 
+<?php
+	include "config.php";
+?>
+
 <html>
 <head>
 	<title>Kumor blog</title>
@@ -15,6 +19,10 @@
 </head>
 
 <body>
-	<p>Henlo :)</p>
+	<h1>
+		<?php
+			echo $config["Name"];
+		?>
+	</h1>
 </body>
 </html>
