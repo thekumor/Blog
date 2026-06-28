@@ -64,11 +64,10 @@ function OnLoad()
 
 				script.onload = () => {
 					console.log("Loaded post script: " + script.src);	
+					PutOnScreen();
 				};
 
 				document.head.appendChild(script);
-				
-				PutOnScreen();
 			}
 		});
 }
