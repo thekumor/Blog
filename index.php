@@ -16,9 +16,10 @@
 	<meta charset="UTF-8" />
 
 	<link rel="stylesheet" href="style.css" />
+	<script src="posts.js"></script>
 </head>
 
-<body>
+<body onload="OnLoad()">
 	<h1>
 		<?php
 			echo $config["Name"];
