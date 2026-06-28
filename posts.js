@@ -72,6 +72,9 @@ function List(...args)
 	args.forEach(arg => listElements += "<li>" + arg + "</li>\n");
 
 	listElements += "</ul>";
+
+	postElements.push(listElements);
+	return listElements;
 }
 
 function PutOnScreen(postName)
