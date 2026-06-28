@@ -22,7 +22,6 @@ function SetTitle(title)
 
 function SetAuthor(author, color = "#ffdd55")
 {
-	postElements.push(element);
 	return Text(author, color);
 }
 
