@@ -8,6 +8,21 @@
 
 var postElements = [];
 
+function SetTitle(title)
+{
+	return Heading(title);
+}
+
+function SetAuthor(author)
+{
+	return Text(author);
+}
+
+function SetTime(time)
+{
+	return Text(time);
+}
+
 function Heading(text)
 {
 	var element = "<h2>" + text + "</h2>"
