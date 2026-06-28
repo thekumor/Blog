@@ -7,19 +7,23 @@
 * ================================================================ */
 
 var postElements = [];
+var metaInfo = {};
 
 function SetTitle(title)
 {
+	metaInfo["Title"] = title;
 	return Heading(title);
 }
 
 function SetAuthor(author)
 {
+	metaInfo["Author"] = author;
 	return Text(author);
 }
 
 function SetTime(time)
 {
+	metaInfo["Time"] = time;
 	return Text(time);
 }
 
@@ -68,8 +72,11 @@ function PutOnScreen(postName)
 	postParent.className = "post-container";
 	parent.appendChild(postParent);
 
-	var title = document.createElement("h2");
-	title.textContent = postName;
+	if (!metaInfo["Title"])
+	{
+		var title = document.createElement("h2");
+		title.textContent = postName;
+	}
 	
 	parent.appendChild(title);
 
@@ -83,6 +90,7 @@ function PutOnScreen(postName)
 
 	// Clears the elements for new post.
 	postElements = [];
+	metaInfo = {};
 }
 
 function OnLoad()
