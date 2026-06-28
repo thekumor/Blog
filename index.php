@@ -24,5 +24,11 @@
 			echo $config["Name"];
 		?>
 	</h1>
+
+	<h3>
+		<?php
+			echo $config["Motto"];
+		?>
+	</h3>
 </body>
 </html>
