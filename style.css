@@ -39,6 +39,11 @@ img {
 	padding-bottom: 100px;
 }
 
+ul {
+    list-style-position: inside;
+    text-align: center;
+}
+
 footer {
 	border-top: 1px solid #bbbbbb;
 	font-size: x-small;
