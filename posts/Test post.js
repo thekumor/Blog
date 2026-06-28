@@ -3,4 +3,4 @@ Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin convallis a
 Text("Vivamus aliquet enim et nulla viverra gravida. Praesent auctor ex non semper interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin a magna pretium, scelerisque justo sit amet, facilisis quam. Donec rhoncus, leo quis rhoncus accumsan, elit sapien molestie urna, eget malesuada ante velit efficitur mi. Fusce finibus augue et felis tincidunt, congue efficitur dolor ultricies. Aliquam ac urna pretium, malesuada lacus id, luctus ipsum. Morbi maximus auctor erat a elementum. Vivamus fermentum vestibulum sodales. Vestibulum ultricies justo est, at tincidunt velit faucibus vitae. Cras interdum auctor rhoncus.");
 
 List("First element in list", "Second element", "Final element.");
-Text("Colored text :)", "#ffaa00");
+Text("Colored text :)", JUSTIFY_DEFAULT, "#ffaa00");

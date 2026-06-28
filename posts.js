@@ -9,6 +9,11 @@
 var postElements = [];
 var metaInfo = {};
 
+var JUSTIFY_CENTER = "justify-center";
+var JUSTIFY_LEFT = "justify-left";
+var JUSTIFY_RIGHT = "justify-right";
+var JUSTIFY_DEFAULT = JUSTIFY_CENTER;
+
 function SetTitle(title)
 {
 	metaInfo["Title"] = title;
@@ -43,14 +48,19 @@ function Image(src)
 	return element;
 }
 
-function Text(content, color)
+function Text(content, justify, color)
 {
 	var element = "";
 
+	if (!justify)
+		justify = JUSTIFY_DEFAULT;
+
+	var style = "";
+
 	if (color)
-		element = "<p class=\"colored-text\">" + content + "</p>";
-	else
-		element = "<p>" + content + "</p>";
+		style = "style=\"color: " + color + "\"";
+
+	element = "<p class=\"" + justify + "\" " + style + ">" + content + "</p>";
 
 	postElements.push(element);
 	return element;

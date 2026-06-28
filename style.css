@@ -19,6 +19,18 @@ p {
 	margin-right: 30%;
 }
 
+.justify-right {
+	text-align: right;
+}
+
+.justify-left { 
+	text-align: left;
+}
+
+.justify-center {
+	text-align: center;
+}
+
 img {
 	width: 33%;
 }
