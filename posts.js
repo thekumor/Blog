@@ -12,7 +12,7 @@ var metaInfo = {};
 var JUSTIFY_CENTER = "justify-center";
 var JUSTIFY_LEFT = "justify-left";
 var JUSTIFY_RIGHT = "justify-right";
-var JUSTIFY_DEFAULT = JUSTIFY_CENTER;
+var JUSTIFY_DEFAULT = JUSTIFY_LEFT;
 
 function SetTitle(title)
 {
