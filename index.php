@@ -30,5 +30,9 @@
 			echo $config["Motto"];
 		?>
 	</h3>
+
+	<footer>
+		<p>Blog - The Kumor 2026</p>
+	</footer>
 </body>
 </html>
