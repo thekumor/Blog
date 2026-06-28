@@ -32,6 +32,18 @@ function SetTime(time)
 	return Text(time);
 }
 
+function SetCategory(cat)
+{
+	metaInfo["Category"] = cat;
+	return Text(cat);
+}
+
+function SetTags(...args)
+{
+	metaInfo["Tags"] = [...args];
+	return List(...args);
+}
+
 function Heading(text)
 {
 	var element = "<h2>" + text + "</h2>"
@@ -43,6 +55,22 @@ function Heading(text)
 function Image(src)
 {
 	var element = "<img src=\"" + src + "\">";
+
+	postElements.push(element);
+	return element;
+}
+
+function Spacer()
+{
+	var element = "<spacer />";
+	
+	postElements.push(element);
+	return element;
+}
+
+function Link(text, href)
+{
+	var element = "<a href=\"" + href + "\"> " + text + " </a>"
 
 	postElements.push(element);
 	return element;
