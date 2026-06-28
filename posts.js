@@ -20,10 +20,22 @@ function SetTitle(title)
 	return Heading(title);
 }
 
-function SetAuthor(author)
+function SetAuthor(author, color = "#ffdd55")
 {
-	metaInfo["Author"] = author;
-	return Text(author);
+	var element = "";
+
+	if (!justify)
+		justify = JUSTIFY_DEFAULT;
+
+	var style = "";
+
+	if (color)
+		style = "style=\"color: " + color + "\"";
+
+	element = "<p id=\" + "author" + "\" class=\"" + justify + "\" " + style + ">" + content + "</p>";
+
+	postElements.push(element);
+	return element;
 }
 
 function SetTime(time)
@@ -146,6 +158,8 @@ function PutOnScreen(postName)
 
 		postParent.appendChild(title);
 	}
+
+	containers.find((element) => )
 
 	postElements.forEach(element => {
 		var container = document.createElement("div");
