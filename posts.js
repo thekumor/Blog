@@ -49,6 +49,10 @@ function PutOnScreen(postName)
 {
 	var parent = document.getElementById("main-container");
 
+	var postParent = document.createElement("div");
+	postParent.className = "post-container";
+	parent.appendChild(postParent);
+
 	var title = document.createElement("h2");
 	title.textContent = postName;
 	
