@@ -32,7 +32,7 @@ function SetAuthor(author, color = "#ffdd55")
 	if (color)
 		style = "style=\"color: " + color + "\"";
 
-	element = "<p id=\" + "author" + "\" class=\"" + justify + "\" " + style + ">" + content + "</p>";
+	element = "<p id=\" + author + "\" class=\"" + justify + "\" " + style + ">" + content + "</p>";
 
 	postElements.push(element);
 	return element;
