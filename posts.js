@@ -94,7 +94,7 @@ function PutOnScreen(postName)
 
 	var containers = document.getElementsByClassName("post-container");
 
-	if (containers > 1)
+	if (containers.length > 1)
 	{
 		var divTimes = {};
 		for (var div of containers)
