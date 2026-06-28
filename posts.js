@@ -123,7 +123,7 @@ function PutOnScreen(postName)
 		var title = document.createElement("h2");
 		title.textContent = postName;
 
-		parent.appendChild(title);
+		postParent.appendChild(title);
 	}
 
 	postElements.forEach(element => {
@@ -131,7 +131,7 @@ function PutOnScreen(postName)
 		container.className = "post-element-container";
 		container.innerHTML = element;
 
-		parent.appendChild(container);
+		postParent.appendChild(container);
 	});
 
 	// Clears the elements for new post.
