@@ -22,6 +22,7 @@ function SetTitle(title)
 
 function SetAuthor(author, color = "#ffdd55")
 {
+	metaInfo["Author"] = author;
 	return Text(author, color, JUSTIFY_LEFT);
 }
 
