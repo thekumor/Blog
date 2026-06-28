@@ -92,7 +92,8 @@ function PutOnScreen(postName)
 
 	var thisDate = Date.parse(metaInfo["Time"]);
 
-	for (div in document.getElementsByClassName("post-container"))
+	var containers = document.getElementsByClassName("post-container");
+	for (var div of containers)
 	{
 		const divTime = Date.parse(div.id);
 
