@@ -1,7 +1,10 @@
-SetTitle("Another boring post 😳");
+// Meta
+SetTitle("New blog 🌟");
 
-Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin convallis augue nisi, ut molestie lectus lacinia ac. Donec sed venenatis purus. Morbi cursus nisi erat, id faucibus nisi maximus vitae. Nullam aliquet dolor eu est gravida, nec gravida tortor commodo. Ut venenatis mi tortor, et vestibulum augue faucibus ut. Vivamus at velit est. Aliquam erat volutpat. Cras ac erat pulvinar, pulvinar metus quis, porttitor justo. In ut felis massa. Cras ut nulla sem.");
-Text("Vivamus aliquet enim et nulla viverra gravida. Praesent auctor ex non semper interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin a magna pretium, scelerisque justo sit amet, facilisis quam. Donec rhoncus, leo quis rhoncus accumsan, elit sapien molestie urna, eget malesuada ante velit efficitur mi. Fusce finibus augue et felis tincidunt, congue efficitur dolor ultricies. Aliquam ac urna pretium, malesuada lacus id, luctus ipsum. Morbi maximus auctor erat a elementum. Vivamus fermentum vestibulum sodales. Vestibulum ultricies justo est, at tincidunt velit faucibus vitae. Cras interdum auctor rhoncus.");
+Text("I just made this script to make blog posts. It's quite simple, and most importantly, works. I'll be updating it so features may expand. Currently it supports:");
+List("Headings", "Text", "Lists", "Images", "Links", "Spacers", "Meta information (author, title, time, categories, tags)");
+Text("Text can be aligned left, right or center. It can be colored.");
 
+// Meta
 SetAuthor("The Kumor");
-SetTime("2026-06-28 16:46");
+SetTime("2026-07-01 9:00");
