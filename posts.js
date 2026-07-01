@@ -14,41 +14,45 @@ var JUSTIFY_LEFT = "justify-left";
 var JUSTIFY_RIGHT = "justify-right";
 var JUSTIFY_DEFAULT = JUSTIFY_LEFT;
 
+var shouldInsert = true;
+
 function SetTitle(title)
 {
 	metaInfo["Title"] = title;
-	return Heading(title);
+	// return Heading(title);
 }
 
 function SetAuthor(author, color = "#ffdd55")
 {
 	metaInfo["Author"] = author;
-	return Text(author, color, JUSTIFY_LEFT);
+	// return Text(author, color, JUSTIFY_LEFT);
 }
 
 function SetTime(time)
 {
 	metaInfo["Time"] = time;
-	return Text(time);
+	// return Text(time);
 }
 
 function SetCategory(cat)
 {
 	metaInfo["Category"] = cat;
-	return Text(cat);
+	// return Text(cat);
 }
 
 function SetTags(...args)
 {
 	metaInfo["Tags"] = [...args];
-	return List(...args);
+	// return List(...args);
 }
 
 function Heading(text)
 {
 	var element = "<h2>" + text + "</h2>"
 
-	postElements.push(element);
+	if (shouldInsert)
+		postElements.push(element);
+	
 	return element;
 }
 
@@ -56,7 +60,10 @@ function Image(src)
 {
 	var element = "<img src=\"" + src + "\">";
 
-	postElements.push(element);
+
+	if (shouldInsert)
+		postElements.push(element);
+	
 	return element;
 }
 
@@ -64,7 +71,9 @@ function Spacer()
 {
 	var element = "<spacer />";
 	
-	postElements.push(element);
+	if (shouldInsert)
+		postElements.push(element);
+	
 	return element;
 }
 
@@ -72,7 +81,9 @@ function Link(text, href)
 {
 	var element = "<a href=\"" + href + "\"> " + text + " </a>"
 
-	postElements.push(element);
+	if (shouldInsert)
+		postElements.push(element);
+	
 	return element;
 }
 
@@ -90,7 +101,9 @@ function Text(content, justify, color)
 
 	element = "<p class=\"" + justify + "\" " + style + ">" + content + "</p>";
 
-	postElements.push(element);
+	if (shouldInsert)
+		postElements.push(element);
+	
 	return element;
 }
 
@@ -101,18 +114,28 @@ function List(...args)
 
 	listElements += "</ul>";
 
-	postElements.push(listElements);
+	if (shouldInsert)
+		postElements.push(listElements);
+	
 	return listElements;
 }
 
 function PutOnScreen(postName)
 {
 	var parent  = document.getElementById("main-container");
-
+	shouldInsert = false;
+	
 	if (!metaInfo["Time"])
-	{
 		metaInfo["Time"] = "2026-06-30 0:00";
-	}
+	
+	var time = Text(metaInfo["Time"]);
+	postElements.push(time);
+	
+	if (!metaInfo["Author"])
+		metaInfo["Author"]= "unnamed";
+	
+	var author = Text(metaInfo["Author"])
+	postElements.push(author);
 
 	var postParent = document.createElement("div");
 	postParent.className = "post-container";
@@ -140,14 +163,10 @@ function PutOnScreen(postName)
         parent.appendChild(postParent);
 
 	if (!metaInfo["Title"])
-	{
-		var title = document.createElement("h2");
-		title.textContent = postName;
-
-		postParent.appendChild(title);
-	}
-
-	//containers.find((element) => )
+		SetTitle(postName);
+	
+	var title = Text(metaInfo["Title"]);
+	postElements.splice(0, 0, title);
 
 	postElements.forEach(element => {
 		var container = document.createElement("div");
@@ -160,6 +179,7 @@ function PutOnScreen(postName)
 	// Clears the elements for new post.
 	postElements = [];
 	metaInfo = {};
+	shouldInsert = true;
 }
 
 function OnLoad()
