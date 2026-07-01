@@ -188,17 +188,8 @@ function OnLoad()
 		.then(res => res.json())
 		.then(files => {
 			for (const file of files) {
-				const script = document.createElement("script");
-				script.src = file;
-
-				const name = file.split("/").pop().replace(".js", "");
-
-				script.onload = () => {
-					console.log("Loaded post script: " + script.src);
-					PutOnScreen(name);
-				};
-
-				document.head.appendChild(script);
+				eval(file.Content);
+				PutOnScreen(file.Name);
 			}
 		});
 }
