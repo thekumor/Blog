@@ -165,7 +165,7 @@ function PutOnScreen(postName)
 	if (!metaInfo["Title"])
 		SetTitle(postName);
 	
-	var title = Text(metaInfo["Title"]);
+	var title = Heading(metaInfo["Title"]);
 	postElements.splice(0, 0, title);
 
 	postElements.forEach(element => {
