@@ -9,10 +9,10 @@
 var postElements = [];
 var metaInfo = {};
 
-var JUSTIFY_CENTER = "justify-center";
-var JUSTIFY_LEFT = "justify-left";
-var JUSTIFY_RIGHT = "justify-right";
-var JUSTIFY_DEFAULT = JUSTIFY_LEFT;
+const JUSTIFY_CENTER = "justify-center";
+const JUSTIFY_LEFT = "justify-left";
+const JUSTIFY_RIGHT = "justify-right";
+const JUSTIFY_DEFAULT = JUSTIFY_LEFT;
 
 var shouldInsert = true;
 
@@ -87,12 +87,9 @@ function Link(text, href)
 	return element;
 }
 
-function Text(content, justify, color)
+function Text(content, justify = JUSTIFY_DEFAULT, color)
 {
 	var element = "";
-
-	if (!justify)
-		justify = JUSTIFY_DEFAULT;
 
 	var style = "";
 
@@ -145,22 +142,22 @@ function PutOnScreen(postName)
 
 	const containers = Array.from(document.getElementsByClassName("post-container"));
 
-    let inserted = false;
+	let inserted = false;
 
-    for (const div of containers)
-    {
-        const divTime = Date.parse(div.id);
+	for (const div of containers)
+	{
+		const divTime = Date.parse(div.id);
 
-        if (divTime < thisDate)
-        {
-            parent.insertBefore(postParent, div);
-            inserted = true;
-            break;
-        }
-    }
+		if (divTime < thisDate)
+		{
+			parent.insertBefore(postParent, div);
+			inserted = true;
+			break;
+		}
+	}
 
-    if (!inserted)
-        parent.appendChild(postParent);
+	if (!inserted)
+		parent.appendChild(postParent);
 
 	if (!metaInfo["Title"])
 		SetTitle(postName);
