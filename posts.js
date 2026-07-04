@@ -142,7 +142,7 @@ function PutOnScreen(postName)
 
 	const containers = Array.from(document.getElementsByClassName("post-container"));
 
-	let inserted = false;
+	var inserted = false;
 
 	for (const div of containers)
 	{
