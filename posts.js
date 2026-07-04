@@ -142,6 +142,9 @@ function PutOnScreen(postName)
 	var parent  = document.getElementById("main-container");
 	shouldInsert = false;
 
+	var spacer = Spacer();
+	postElements.push(spacer);
+
 	if (!metaInfo["Time"])
 		metaInfo["Time"] = "2026-06-30 0:00";
 	
@@ -153,9 +156,6 @@ function PutOnScreen(postName)
 	
 	var author = Text(metaInfo["Author"])
 	postElements.push(author);
-
-	var spacer = Spacer();
-	postElements.push(spacer);
 
 	var postParent = document.createElement("div");
 	postParent.className = "post-container";
