@@ -56,6 +56,11 @@ ul {
 	border-top: 1px solid #bbbbbb;
 }
 
+#meta-spacer {
+	width: 40%;
+	margin-right: 60%;
+}
+
 .code {
 	text-align: left;
 	border: 2px solid gray;

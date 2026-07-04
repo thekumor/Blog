@@ -77,6 +77,16 @@ function Spacer()
 	return element;
 }
 
+function MetaSpacer()
+{
+	var element = "<div class=\"spacer\" id=\"meta-spacer\"></div>";
+	
+	if (shouldInsert)
+		postElements.push(element);
+	
+	return element;
+}
+
 function Link(text, href)
 {
 	var element = "<a href=\"" + href + "\"> " + text + " </a>"
@@ -142,7 +152,7 @@ function PutOnScreen(postName)
 	var parent  = document.getElementById("main-container");
 	shouldInsert = false;
 
-	var spacer = Spacer();
+	var spacer = MetaSpacer();
 	postElements.push(spacer);
 
 	if (!metaInfo["Time"])
