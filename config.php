@@ -8,7 +8,7 @@
 * ================================================================ */
 
 $config = [
-	"Name" => "Kumor blog",
+	"Name" => "Kumorblog",
 	"Motto" => "Things I think of"
 ];
 
