@@ -87,9 +87,9 @@ function Link(text, href)
 	return element;
 }
 
-function CodeBlock(code)
+function CodeBlock(language, code)
 {
-	var element = "<pre><code>" + code + "</code></pre>";
+	var element = "<pre class="code"><code class=\"language-" + language + "\">" + code + "</code></pre>";
 
 	if (shouldInsert)
 		postElements.push(element);
@@ -191,6 +191,10 @@ function PutOnScreen(postName)
 		container.innerHTML = element;
 
 		postParent.appendChild(container);
+		
+		// Highlight code
+		if (container.querySelector("code"))
+			hljs.highlightBlock(container.querySelector("code"));
 	});
 
 	// Clears the elements for new post.
