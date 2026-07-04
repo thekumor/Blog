@@ -50,6 +50,12 @@ ul {
     text-align: left;
 }
 
+.spacer {
+	display: inline-block;
+	width: 500px;
+	border-top: 1px solid #3a9543;
+}
+
 .code {
 	text-align: left;
 	border: 2px solid gray;
