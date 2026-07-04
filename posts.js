@@ -22,7 +22,7 @@ function SetTitle(title)
 	// return Heading(title);
 }
 
-function SetAuthor(author, color = "#ffdd55")
+function SetAuthor(author)
 {
 	metaInfo["Author"] = author;
 	// return Text(author, color, JUSTIFY_LEFT);
@@ -141,7 +141,7 @@ function PutOnScreen(postName)
 {
 	var parent  = document.getElementById("main-container");
 	shouldInsert = false;
-	
+
 	if (!metaInfo["Time"])
 		metaInfo["Time"] = "2026-06-30 0:00";
 	
@@ -153,6 +153,9 @@ function PutOnScreen(postName)
 	
 	var author = Text(metaInfo["Author"])
 	postElements.push(author);
+
+	var spacer = Spacer();
+	postElements.push(spacer);
 
 	var postParent = document.createElement("div");
 	postParent.className = "post-container";
