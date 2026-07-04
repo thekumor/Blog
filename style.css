@@ -12,9 +12,6 @@ html {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font-size: large;
 	text-align: center;
-}
-
-p {
 	margin-left: 30%;
 	margin-right: 30%;
 }
@@ -40,11 +37,12 @@ img {
 }
 
 ul {
-    display: inline-block;
     text-align: left;
 }
 
 footer {
+	margin-left: 5%;
+	margin-right: 5%;
 	border-top: 1px solid #bbbbbb;
 	font-size: x-small;
 	margin-top: 20px;
