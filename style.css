@@ -52,8 +52,8 @@ ul {
 
 .spacer {
 	display: inline-block;
-	width: 500px;
-	border-top: 1px solid #3a9543;
+	width: 50%;
+	border-top: 1px solid #bbbbbb;
 }
 
 .code {
