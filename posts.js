@@ -158,13 +158,13 @@ function PutOnScreen(postName)
 	if (!metaInfo["Time"])
 		metaInfo["Time"] = "2026-06-30 0:00";
 	
-	var time = Text(metaInfo["Time"]);
+	var time = Text(metaInfo["Time"], JUSTIFY_RIGHT);
 	postElements.push(time);
 	
 	if (!metaInfo["Author"])
 		metaInfo["Author"]= "unnamed";
 	
-	var author = Text(metaInfo["Author"])
+	var author = Text(metaInfo["Author"], JUSTIFY_RIGHT);
 	postElements.push(author);
 
 	var postParent = document.createElement("div");
