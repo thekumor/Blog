@@ -32,17 +32,19 @@ include "config.php";
 </head>
 
 <body onload="OnLoad()">
-	<h1>
-		<?php
-		echo $config["Name"];
-		?>
-	</h1>
+	<div class="container" id="header-container">
+		<h1>
+			<?php
+			echo $config["Name"];
+			?>
+		</h1>
 
-	<h3>
-		<?php
-		echo $config["Motto"];
-		?>
-	</h3>
+		<h3>
+			<?php
+			echo $config["Motto"];
+			?>
+		</h3>
+	</div>
 
 	<div class="container" id="main-container"></div>
 

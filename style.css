@@ -39,6 +39,11 @@ img {
 	margin-right: 30%;
 }
 
+#header-container {
+	padding-bottom: 50px;
+	border-bottom: 1px solid gray;
+}
+
 ul {
     text-align: left;
 }
