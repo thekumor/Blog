@@ -56,6 +56,10 @@ ul {
 	border-top: 1px solid #bbbbbb;
 }
 
+.logo {
+	width: 10%;
+}
+
 #meta-spacer {
 	width: 40%;
 	margin-left: 60%;

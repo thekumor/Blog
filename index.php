@@ -25,7 +25,6 @@ include "config.php";
 	<!-- Highlight.js -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-	<script>hljs.highlightAll();</script>
 
 	<link rel="stylesheet" href="style.css" />
 	<script src="posts.js"></script>
@@ -33,6 +32,8 @@ include "config.php";
 
 <body onload="OnLoad()">
 	<div class="container" id="header-container">
+		<img class="logo" src="https://thekumor.com/img/kumor_logo.svg" />
+
 		<h1>
 			<?php
 			echo $config["Name"];
