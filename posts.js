@@ -87,6 +87,26 @@ function Link(text, href)
 	return element;
 }
 
+function CodeBlock(code)
+{
+	var element = "<pre><code>" + code + "</code></pre>";
+
+	if (shouldInsert)
+		postElements.push(element);
+
+	return element;
+}
+
+function Button(text, href)
+{
+	var element = "<a href=\"" + href + "\" class=\"button\">" + text + "</a>";
+	
+	if (shouldInsert)
+		postElements.push(element);
+
+	return element;
+}
+
 function Text(content, justify = JUSTIFY_DEFAULT, color)
 {
 	var element = "";
