@@ -154,7 +154,7 @@ function PutOnScreen(postName)
 	var author = Text(metaInfo["Author"])
 	postElements.push(author);
 
-	var spacer = Spacer();
+	var spacer = Text(metaInfo["Author"]);
 	postElements.push(spacer);
 
 	var postParent = document.createElement("div");
