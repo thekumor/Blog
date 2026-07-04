@@ -41,7 +41,9 @@ img {
 
 #header-container {
 	padding-bottom: 50px;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid #bbbbbb;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 ul {
