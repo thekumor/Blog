@@ -13,4 +13,3 @@ Text("Whenever somebody writes either:");
 List("thekumor.com/g/Minesweeper or,", "thekumor.com/git/Minesweeper");
 Text("It's going to redirect them to github.com/thekumor/Minesweeper. It works for all projects, even the ones that don't exist.");
 Text("It effectively shortens time needed to get there by 3 to 5 characters.");
-CodeBlock("lua", "print('Hello, World!')");
