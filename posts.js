@@ -69,7 +69,7 @@ function Image(src)
 
 function Spacer()
 {
-	var element = "<spacer />";
+	var element = "<spacer type=\"block\" width=\"100\" />";
 	
 	if (shouldInsert)
 		postElements.push(element);
