@@ -43,10 +43,11 @@ include "config.php";
 			</h1>
 		</div>
 
-		<h3>
-			<?php
-			echo $config["Motto"];
-			?>
+		<h3><i>
+				<?php
+				echo $config["Motto"];
+				?>
+			</i>
 		</h3>
 	</div>
 
