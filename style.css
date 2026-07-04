@@ -43,6 +43,11 @@ ul {
     text-align: left;
 }
 
+.code {
+	text-align: left;
+	border: 2px dotted gray;
+}
+
 footer {
 	margin-left: 5%;
 	margin-right: 5%;
