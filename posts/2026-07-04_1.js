@@ -12,3 +12,6 @@ Text("Today I added code blocks to this blog. I can now put code here with it be
 Text("Some example code:")
 CodeBlock("cpp", "int main() {\n\tstd::cout << \"Hello World!\" << std::endl;\n\treturn 0;\n}");
 Text("It's dark and with a custom border around it for now. This is unironically something I'll need the most and I'm happy that libraries like these exist so that I don't have to implement them myself. 🙂");
+Spacer();
+Spacer();
+Spacer();
