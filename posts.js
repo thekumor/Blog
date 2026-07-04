@@ -89,7 +89,7 @@ function Link(text, href)
 
 function CodeBlock(language, code)
 {
-	var element = "<pre class="code"><code class=\"language-" + language + "\">" + code + "</code></pre>";
+	var element = "<pre class=\"code\"><code class=\"language-" + language + "\">" + code + "</code></pre>";
 
 	if (shouldInsert)
 		postElements.push(element);
