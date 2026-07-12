@@ -13,8 +13,8 @@ $config = [
 	
 	"Database" => [
 		"Host" => "localhost",
-		"User" => "blog_usr",
-		"Password" => "???",
+		"User" => "root",
+		"Password" => "",
 		"Database" => "blog"
 	]
 ];
