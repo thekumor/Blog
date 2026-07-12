@@ -14,7 +14,7 @@ error_reporting(E_ALL);
 include "config.php";
 ?>
 
-<html>
+<html lang="en">
 
 <head>
 	<title><?php
@@ -22,22 +22,34 @@ include "config.php";
 	?></title>
 	<meta charset="UTF-8" />
 
+	<!-- Highlight.js -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
 	<link rel="stylesheet" href="style.css" />
 	<script src="posts.js"></script>
 </head>
 
 <body onload="OnLoad()">
-	<h1>
-		<?php
-		echo $config["Name"];
-		?>
-	</h1>
+	<div class="container" id="header-container">
+		<div class="container" id="top-header-container">
+			<img class="logo" src="https://thekumor.com/img/kumor_logo.svg" />
 
-	<h3>
-		<?php
-		echo $config["Motto"];
-		?>
-	</h3>
+			<h1>
+				<?php
+				echo $config["Name"];
+				?>
+			</h1>
+		</div>
+
+		<h3><i>
+				<?php
+				echo $config["Motto"];
+				?>
+			</i>
+		</h3>
+	</div>
 
 	<div class="container" id="main-container"></div>
 

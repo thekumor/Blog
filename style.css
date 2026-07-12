@@ -12,9 +12,6 @@ html {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font-size: large;
 	text-align: center;
-	margin-left: 25%;
-	margin-right: 25%;
-    text-align: left;
 }
 
 .justify-right {
@@ -37,9 +34,51 @@ img {
 	padding-bottom: 100px;
 }
 
+#main-container {
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
+#header-container {
+	margin-bottom: 120px;
+	/* border-bottom: 1px solid #bbbbbb;
+	margin-left: 50%;
+	margin-right: 50%; */
+}
+
+ul {
+    text-align: left;
+}
+
+.spacer {
+	display: inline-block;
+	width: 100%;
+	border-top: 1px solid #bbbbbb;
+}
+
+.logo {
+	width: 10%;
+}
+
+#meta-spacer {
+	width: 40%;
+	margin-left: 60%;
+}
+
+#top-header-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.code {
+	text-align: left;
+	border: 2px solid gray;
+}
+
 footer {
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
 	border-top: 1px solid #bbbbbb;
 	font-size: x-small;
 	margin-top: 20px;

@@ -22,7 +22,7 @@ function SetTitle(title)
 	// return Heading(title);
 }
 
-function SetAuthor(author, color = "#ffdd55")
+function SetAuthor(author)
 {
 	metaInfo["Author"] = author;
 	// return Text(author, color, JUSTIFY_LEFT);
@@ -69,7 +69,17 @@ function Image(src)
 
 function Spacer()
 {
-	var element = "<spacer />";
+	var element = "<div class=\"spacer\"></div>";
+	
+	if (shouldInsert)
+		postElements.push(element);
+	
+	return element;
+}
+
+function MetaSpacer()
+{
+	var element = "<div class=\"spacer\" id=\"meta-spacer\"></div>";
 	
 	if (shouldInsert)
 		postElements.push(element);
@@ -84,6 +94,26 @@ function Link(text, href)
 	if (shouldInsert)
 		postElements.push(element);
 	
+	return element;
+}
+
+function CodeBlock(language, code)
+{
+	var element = "<pre class=\"code\"><code class=\"language-" + language + "\">" + code + "</code></pre>";
+
+	if (shouldInsert)
+		postElements.push(element);
+
+	return element;
+}
+
+function Button(text, href)
+{
+	var element = "<a href=\"" + href + "\" class=\"button\">" + text + "</a>";
+	
+	if (shouldInsert)
+		postElements.push(element);
+
 	return element;
 }
 
@@ -121,17 +151,20 @@ function PutOnScreen(postName)
 {
 	var parent  = document.getElementById("main-container");
 	shouldInsert = false;
-	
+
+	var spacer = MetaSpacer();
+	postElements.push(spacer);
+
 	if (!metaInfo["Time"])
 		metaInfo["Time"] = "2026-06-30 0:00";
 	
-	var time = Text(metaInfo["Time"]);
+	var time = Text(metaInfo["Time"], JUSTIFY_RIGHT);
 	postElements.push(time);
 	
 	if (!metaInfo["Author"])
 		metaInfo["Author"]= "unnamed";
 	
-	var author = Text(metaInfo["Author"])
+	var author = Text(metaInfo["Author"], JUSTIFY_RIGHT);
 	postElements.push(author);
 
 	var postParent = document.createElement("div");
@@ -171,6 +204,10 @@ function PutOnScreen(postName)
 		container.innerHTML = element;
 
 		postParent.appendChild(container);
+		
+		// Highlight code
+		if (container.querySelector("code"))
+			hljs.highlightBlock(container.querySelector("code"));
 	});
 
 	// Clears the elements for new post.
