@@ -1,12 +1,12 @@
 <?php
 /* ================================================================
-*
-*	Contains interface for connecting to database and retrieving
-*	data from it as well as saving/modifying it.
-*
-*	#Authors: The Kumor
-*
-* ================================================================ */
+ *
+ *	Contains interface for connecting to database and retrieving
+ *	data from it as well as saving/modifying it.
+ *
+ *	#Authors: The Kumor
+ *
+ * ================================================================ */
 
 include "config.php";
 
@@ -46,11 +46,14 @@ function Connect()
 		created_at DATETIME,
 		category INT,
 		tags TEXT,
-		content BLOB,
+		content TEXT,
+		version TEXT,
 
 		FOREIGN KEY(author) REFERENCES users(id),
 		FOREIGN KEY(category) REFERENCES categories(id)
 	);");
+
+	$conn->query("INSERT INTO users(id, nick) VALUES(1, \"Admin\") ON DUPLICATE KEY UPDATE id = 1");
 
 	return $conn;
 }
@@ -69,18 +72,31 @@ function CreateCategory($conn, $category)
 	$conn->query("INSERT INTO categories(name) VALUES({$category});");
 }
 
-function CreatePost($conn, $title, $authorName, $categoryName, $tags, $content, $timestamp = date("Y-m-d H:i:s"))
+function CreatePost($conn, $title, $authorName, $categoryName, $tags, $content, $timestamp, $version)
 {
+	$timestamp = $timestamp ? $timestamp : date("Y-m-d H:i:s");
+	$version = $version ? $version : "0";
+
 	$title = mysqli_real_escape_string($conn, $title);
 	$authorName = mysqli_real_escape_string($conn, $authorName);
 	$categoryName = mysqli_real_escape_string($conn, $categoryName);
 	$tags = mysqli_real_escape_string($conn, $tags);
 	$timestamp = mysqli_real_escape_string($conn, $timestamp);
-	
-	// Will this work?
-	//$content = mysqli_real_escape_string($conn, $content);
+	$version = mysqli_real_escape_string($conn, $version);
 
-//	$conn->query("INSERT INTO posts(author, title, created_at, category, tags, content) VALUES()");
+	$query = "SELECT id FROM users WHERE nick LIKE \"{$authorName}\";";
+	$authorID = $conn->query($query)->fetch_row()[0];
+
+	$query = "SELECT id FROM categories WHERE name LIKE \"{$categoryName}\";";
+	$categoryID = $conn->query($query)->fetch_row()[0];
+
+	$content = base64_encode($content);
+
+	$query = "INSERT INTO posts(author, title, created_at, category, tags, content, version)
+		VALUES({$authorID}, \"{$title}\", \"{$timestamp}\", {$categoryID}, \"{$tags}\", \"{$content}\", \"{$version}\");
+	";
+
+	$conn->query($query);
 }
 
 function Disconnect($conn)

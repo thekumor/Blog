@@ -60,7 +60,6 @@ function Image(src)
 {
 	var element = "<img src=\"" + src + "\">";
 
-
 	if (shouldInsert)
 		postElements.push(element);
 	
