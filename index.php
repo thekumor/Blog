@@ -12,15 +12,6 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 include "database.php";
-//$conn = Connect();
-
-//$title = "Test post";
-//$authorName = "Admin";
-//$categoryName = "undefined";
-//$tags = "test, lol";
-//$content = "Text(\"Hello there :)\"); Spacer();";
-
-//CreatePost($conn, $title, $authorName, $categoryName, $tags, $content, null, null);
 ?>
 
 <html lang="en">

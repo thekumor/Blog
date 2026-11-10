@@ -83,3 +83,15 @@ footer {
 	font-size: x-small;
 	margin-top: 20px;
 }
+
+#admin-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	margin: 20px;
+}
+
+#admin-container a:hover {
+	background-color: rgb(40, 40, 40);
+	border: 1px dashed black;
+}
