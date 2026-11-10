@@ -14,6 +14,11 @@ $dtb = $config["Database"];
 if (!$dtb)
 	die("Couldn't retrieve database info!");
 
+function Disconnect($conn)
+{
+	$conn->close();
+}
+
 function Connect()
 {
 	global $dtb;
@@ -26,6 +31,7 @@ function Connect()
 	if (!$conn)
 		die("Couldn't connect!");
 
+	// Create this database.
 	$conn->query("CREATE DATABASE IF NOT EXISTS {$dtb['Database']};");
 	$conn->query("USE {$dtb['Database']};");
 
@@ -54,6 +60,20 @@ function Connect()
 	);");
 
 	$conn->query("INSERT INTO users(id, nick) VALUES(1, \"Admin\") ON DUPLICATE KEY UPDATE id = 1");
+
+	// Create a user and grant him privileges on this database.
+	$conn->query("CREATE USER IF NOT EXISTS blog IDENTIFIED BY {$dtb['Password']};");
+	$conn->query("GRANT ALL PRIVILEGES ON {$dtb['Database']}.* to 'blog'@'localhost' WITH GRANT OPTION;");
+
+	Disconnect($conn);
+
+	$conn = new mysqli(
+		$dtb["Host"],
+		"blog",
+		$dtb["Password"]
+	);
+	if (!$conn)
+		die("Couldn't connect!");
 
 	return $conn;
 }
@@ -97,9 +117,4 @@ function CreatePost($conn, $title, $authorName, $categoryName, $tags, $content, 
 	";
 
 	$conn->query($query);
-}
-
-function Disconnect($conn)
-{
-	$conn->close();
 }
