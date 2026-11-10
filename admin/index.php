@@ -40,24 +40,25 @@ include "../database.php";
 				echo $config["Name"] . " admin panel";
 				?>
 			</h1>
-
-			<h3><i>
-					<?php
-					echo $config["Motto"];
-					?>
-				</i>
-			</h3>
-
-			<div class="container" id="admin-container">
-				<a href="settings.php">Blog settings</a>
-				<a href="add_user.php">Manage users</a>
-				<a href="add_category.php">Manage categories</a>
-				<a href="add_post.php">Manage posts</a>
-			</div>
-			
-			<a href="../">Back . . .</a>
 		</div>
+
+		<h3>
+			<i>
+				<?php
+				echo $config["Motto"];
+				?>
+			</i>
+		</h3>
 	</div>
+
+	<div class="container" id="admin-container">
+		<a href="settings.php">Blog settings</a>
+		<a href="add_user.php">Manage users</a>
+		<a href="add_category.php">Manage categories</a>
+		<a href="add_post.php">Manage posts</a>
+	</div>
+			
+	<a href="../">Back . . .</a>
 
 	<footer>
 		<p>Blog - The Kumor 2026</p>
